@@ -64,6 +64,7 @@ public class AppsflyerSdkPlugin implements MethodCallHandler {
     }
 
     public static void registerWith(Registrar registrar) {
+        if(registrar.activity() == null) return;
 
         if (instance == null) {
             instance = new AppsflyerSdkPlugin(registrar);
